@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:10;padding:0;}
+        body{font-family: "나눔고딕";  
+            font-size:12px; }
+        #page{ 
+            width: 970px; 
+            margin: 0 auto;}
+        ul{list-style-type: none;}
+        a{text-decoration: none;
+            color:white }
+        #clear{clear:both;}
+        #logo{float:left;}
+        #top{border: 1px solid white;
+            vertical-align: top;}
+        #top li{float:right; margin-right:7px;}
+        #main_menu{margin-left:200px; margin-top:25px;
+                    background-image: url(img/main_menu_bg.png);
+                    background-repeat: no-repeat;
+                   
+                  }
+        #main_menu li{
+                    display:inline-block; 
+                    font-size: 14px; font-weight: bold;
+                    color:white !important;
+                        padding:14px; height:12px;
+                        margin-left:30px;
+                        margin-right:20px}
+       
+        header{height:90px;} /*헤더 끝*/
+
+        aside{width:190px;float:left;}
+        #login_box{background-color:whitesmoke;
+                width:173px;height:100px;
+                padding:10px;border:1px solid silver;
+                border-radius: 10px;}
+        #login_input {width:100px;float:left;}
+        #login_input li{margin-top:2px; }
+        #login_input input{width:100px;}
+        #btn_log {margin:10px 0 0 10px;} /*로그인 끝*/
+        #sub_menu{background-image: url(img/sub_menu_bg.png);
+                    background-repeat: no-repeat;
+                    height:340px; width:230px}
+        #community_list {padding:100px 0 0 30px; font-size: 14px;}
+        #community_list li {padding: 5px;} /*서브메뉴 끝*/
+        #list_banner{border: 1px solid silver;
+                    border-radius: 10px;margin-bottom: 20px;}
+        #list_banner img{padding: 5px;} /*배너 끝*/
+        
+        #comm {margin-left: 10px;}
+        #jage {border-bottom:2px solid silver;padding-bottom: 7px;
+            margin:15px;margin-left: 200px;
+            font-size: 15px;font-weight: bold;}
+        #new{margin:0 300px 10px 10px;float:left;}
+        #select_search {float:left; margin-right:3px}
+        #select select{float:left;margin-right:3px}
+        #select input{float:left;margin-right:3px;
+                    width:100px;height:15px}
+        table{margin-left:200px; height: 120px;}
+        table th{background-color: whitesmoke;}
+        #next{margin: 0 230px 0 300px; float:left;} 
+        #click{text-decoration: none;color:black;}
+            /*게시글 끝*/
+
+        footer #line{margin-top: 20px;border-top:1px solid silver}
+        #footer_logo{float:left;padding:0 0 20px 200px;}
+        #footer_info{float:left;padding-left: 30px;}
+        #sns{float:right; padding-top:10px;vertical-align: top;}
+
+    </style>
+</head>
+<body>
+    <div id="page">
+        <header>
+            <img id="logo" src="img/logo.png">
+            <nav id="top_menu">
+                <ul id="top">
+                    <li>NOTICE</li>
+                    <li>|</li>
+                    <li>JOIN</li>
+                    <li>|</li>
+                    <li>LOGIN</li>                   
+                    <li>|</li>
+                    <li>HOME</li>
+                </ul>
+                <ul id="main_menu">
+                    <li><a href="board_list.html">자유 게시판</a></li>
+                    <li><a href="#">기타 연주</a></li>
+                    <li><a href="#">공동 구매</a></li>
+                    <li><a href="#">연주회 안내</a></li>
+                    <li><a href="#">회원 게시판</a></li>
+                </ul>
+            </nav>   
+        </header>
+        <aside>
+            <article id="login_box">
+                <img id="login_title" src="img/ttl_login.png">
+                <div id="input_button">
+                        <ul id="login_input">
+                            <li><input type="text"></li>
+                            <li><input type="password"></li>
+                        </ul>
+                <img id="btn_log" src="img/btn_login.gif">
+                </div>
+                <div id="clear"></div>
+                <div id="join_search">
+                    <img src="img/btn_join.gif">
+                    <img src="img/btn_search.gif">
+                </div>
+            </article>
+            <article id="sub_menu">
+               <ul id="community_list">
+                <li>+ 자유 게시판</li>
+                <li>+ 방명록</li>
+                <li>+ 공지사항</li>
+                <li>+ 등업요청</li>
+                <li>+ 포토갤러리</li>
+               </ul>
+            </article>
+            <article>
+                <div id="list_banner">
+                    <img src="img/banner1.png">
+                    <img src="img/banner2.png">
+                    <img src="img/banner3.png">
+                    
+                </div>
+            </article>
+        </aside>
+        <main>
+          <img id="comm" src="img/comm.gif">
+          <div id="jage">자유게시판</div>
+          <div id="new">▷ 총 5개의 게시물이 있습니다.</div>
+          <div id="select">
+            <img id="select_search" src="img/select_search.gif">
+            
+            <select>
+                <option>제목</option>
+                <option>글쓴이</option>
+                <option>게시일</option>
+            </select>
+            <input type="text">
+            <img src="img/search_button.gif">
+            <table width ="750" height="100" align="center" border="0" frameborder="0" >
+                <tr align = "center"><th width ="70">번호</th><th>제목</th><th>글쓴이</th><th>일시</th><th>조회수</th></tr>
+                <tr align = "center"><td>1</td><td align="left"><a id="click" href="board_view.html">&nbsp;&nbsp;&nbsp;&nbsp;까스롱님의 선물인 보드카가 정말 독하네요!!!</a></td> <td>루바트</td><td>2017-09-20</td><td>15</td></tr>
+                <tr align = "center"><td>2</td><td align="left"><a id="click" href="board_view.html">&nbsp;&nbsp;&nbsp;&nbsp;까스롱님의 선물인 보드카가 정말 독하네요!!!</a></td><td>루바트</td><td>2017-09-20</td><td>15</td></tr>
+                <tr align = "center"><td>3</td><td align="left"><a id="click" href="board_view.html">&nbsp;&nbsp;&nbsp;&nbsp;까스롱님의 선물인 보드카가 정말 독하네요!!!</a></td><td>루바트</td><td>2017-09-20</td><td>15</td></tr>
+              
+            </table>
+            </div>
+            <div id="next">◀ 이전 1 다음 ▶</div>
+            <img src="img/list.png">
+            <a href="board_write.html"><img src="img/write.png"></a>
+        </main>   
+        <div id="clear"></div>   
+         <footer>
+                <div id="line"></div>
+                <img id="footer_logo" src="img/footer_logo.gif">
+                <div id="footer_info">
+                    <ul>
+                        <li>서울시 강남구 삼성동 1234 우 : 123-1234</li>
+                        <li>TEL:031-123-1234 Email:email@domain.com</li>
+                        <li>COPYRIGHT (C) 루바트 ALL RIGHTS RESERVED</li>
+                    </ul>
+                </div>
+                <div id="sns">
+                <img src="img/facebook.gif">
+                <img src="img/blog.gif">
+                <img src="img/twitter.gif">     
+            </footer>
+    </div>
+
+</body>
+</html>
