@@ -6,7 +6,8 @@
 <!-- DB include -->
 <%@ include file="conn_oracle.jsp" %>
 <!--  form에서 넘어오는 데이터는 모두 string으로 넘긴다 
-Integer.perseInt()
+Integer.parseInt()
+Double.parseDouble()
 -->
 
 <!-- form에서 넘어오는 변수의 값을 받아서 새로운 변수에 할당 -->
@@ -63,7 +64,7 @@ Integer.perseInt()
 	}catch (Exception e){
 		out.println("예상치 못한 오류가 발생했습니다.<p/>");
 		out.println("고객센터 : 02-1111-1111 <p/>");
-		
+		// e.printStackTrace();'
 	}finally{
 		if(conn !=null) conn.close();
 		if(stmt !=null) stmt.close();

@@ -34,7 +34,7 @@
     </HEAD>                                       
     <BODY>                                        
     <P>                                           
-    <FORM name="msgwrite" method="post" action="freeboard_save2.jsp">    
+    <FORM name="msgwrite" method="post" action="freeboard_save3.jsp">    
     <CENTER>                                      
     <table width="600"cellspacing="0" cellpadding="2">           
      <tr>                                        
