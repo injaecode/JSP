@@ -5,7 +5,7 @@
 <%@ page import = "java.sql.*, java.util.*,java.text.*" %>
 <!-- DB include -->
 <%@ include file="conn_oracle.jsp" %>
-<!--  form에서 넘어오는 데이터는 모두 string으로 넘긴다 
+<!--  form에서 넘어오는 데이터는 모두 string으로 넘어감 그래서 정/실수로 변환해줘야됨 
 Integer.parseInt()
 Double.parseDouble()
 -->

@@ -1,7 +1,50 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<%@ page language="java" import="java.sql.*" %> 
+<%@ page language="java" import="java.sql.*,java.util.*" %> 
+<%@ include file="conn_oracle.jsp" %>
+<%
+	String sql=null;
+	Statement stmt=null;
+	PreparedStatement pstmt=null;
+	ResultSet rs=null;
+
+	int id=Integer.parseInt(request.getParameter("id"));
+	String p=request.getParameter("page");
+	
+	/*
+	out.println(id+"<p/>");
+	out.println(p);
+	
+	if(true) return;
+	*/
+try{
+	sql="select * from freeboard where id=?";
+	pstmt=conn.prepareStatement(sql);
+	pstmt.setInt(1,id);
+	rs=pstmt.executeQuery();
+	
+	if (!(rs.next())){
+		out.println("해당 내용이 database에 존재하지 않습니다.");
+		
+	}else{
+		
+	}//if 종료
+	
+}catch (Exception e){
+	//e.printStackTrace();
+}finally{
+	if (conn !=null) conn.close();
+	if (stmt !=null) stmt.close();
+	if (pstmt !=null) pstmt.close();
+	if (rs!=null) rs.close();
+}
+
+	
+	
+%>
+
+
 <HTML>
 <HEAD>
 <SCRIPT language="javascript">
@@ -39,21 +82,25 @@ function check() {
 <P>
 
 <FORM name="msgwrite" method=POST action="freeboard_upddb.jsp">
+
+<input type="hidden" name="id" value="<%= id %>">
+<input type="hidden" name="p" value="<%= p %>">
+<input >
  <table width="600" cellspacing="0" cellpadding="2" align = "center">
   <tr> 
-   <td colspan="2" bgcolor="#1F4F8F" height="1"></td>
+	   <td colspan="2" bgcolor="#1F4F8F" height="1"></td>
   </tr>
-  <tr> 
-   <td colspan="2" bgcolor="#DFEDFF" height="20" class="notice">&nbsp;&nbsp;<font size="2">글 수정하기</font></td>
-  </tr>
-  <tr> 
-   <td colspan="2" bgcolor="#1F4F8F" height="1"></td>
-  </tr>
-  <tr> 
-   <td width="124" height="30" align="center" bgcolor="#f4f4f4">이 름</td>
-   <td width="494"  style="padding:0 0 0 10"> 
-    <input type=text name=name value="" class="input_style1">
-   </td>
+	  <tr> 
+	   <td colspan="2" bgcolor="#DFEDFF" height="20" class="notice">&nbsp;&nbsp;<font size="2">글 수정하기</font></td>
+	</tr>
+	<tr> 
+	   <td colspan="2" bgcolor="#1F4F8F" height="1"></td>
+	</tr>
+	<tr> 
+		   <td width="124" height="30" align="center" bgcolor="#f4f4f4">이 름</td>
+		   <td width="494"  style="padding:0 0 0 10"> 
+		    <input type=text name=name value="" class="input_style1">
+		   </td>
   </tr>
   <tr> 
    <td width="124" align="center"  bgcolor="#f4f4f4">E-mail</td>
@@ -74,7 +121,7 @@ function check() {
    </td>
   </tr>
   <tr> 
-   <td width="124" align="center"  bgcolor="#f4f4f4">암 호</td>
+   <td width="124"  height="162" align="center"  bgcolor="#f4f4f4">암 호</td>
    <td width="494" style="padding:0 0 0 10" height="25"> 
     <input type='password' name='password'  class="input_style1"><br>(정확한 비밀번호를 입력해야만 수정이 됩니다.)
    </td>
